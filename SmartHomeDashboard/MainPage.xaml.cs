@@ -1,1 +1,9 @@
-﻿asd
+﻿namespace SmartHomeDashboard.Views;
+
+public partial class MainPage : ContentPage
+{
+    public MainPage()
+    {
+        InitializeComponent();
+    }
+}

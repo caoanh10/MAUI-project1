@@ -1,1 +1,93 @@
-﻿
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="SmartHomeDashboard.Views.MainPage"
+    BackgroundColor="{StaticResource SecondaryColor}">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="16">
+
+            <!-- HEADER -->
+            <VerticalStackLayout>
+                <Label Text="Smart Home Dashboard"
+                       Style="{StaticResource TitleText}" />
+                <Label Text="Living Room Overview"
+                       Style="{StaticResource SubtitleText}" />
+            </VerticalStackLayout>
+
+            <!-- WEATHER CARD -->
+            <Frame Style="{StaticResource CardFrame}">
+                <HorizontalStackLayout Spacing="16">
+                    <Image Source="weather.png" WidthRequest="48"/>
+                    <VerticalStackLayout>
+                        <Label Text="28°C" FontSize="20" FontAttributes="Bold"/>
+                        <Label Text="Sunny" TextColor="{StaticResource TextSecondary}"/>
+                    </VerticalStackLayout>
+                </HorizontalStackLayout>
+            </Frame>
+
+            <!-- DEVICE GRID -->
+            <Grid RowSpacing="16" ColumnSpacing="16">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Light -->
+                <Frame Grid.Row="0" Grid.Column="0" Style="{StaticResource CardFrame}">
+                    <VerticalStackLayout Spacing="8">
+                        <Image Source="light.png" HeightRequest="40"/>
+                        <Label Text="Light" FontAttributes="Bold"/>
+                        <Label Text="ON" TextColor="Green"/>
+                        <Switch/>
+                    </VerticalStackLayout>
+                </Frame>
+
+                <!-- Fan -->
+                <Frame Grid.Row="0" Grid.Column="1" Style="{StaticResource CardFrame}">
+                    <VerticalStackLayout Spacing="8">
+                        <Image Source="fan.png" HeightRequest="40"/>
+                        <Label Text="Fan" FontAttributes="Bold"/>
+                        <Label Text="OFF" TextColor="Gray"/>
+                        <Switch/>
+                    </VerticalStackLayout>
+                </Frame>
+
+                <!-- Air Conditioner -->
+                <Frame Grid.Row="1" Grid.Column="0" Style="{StaticResource CardFrame}">
+                    <VerticalStackLayout Spacing="8">
+                        <Image Source="ac.png" HeightRequest="40"/>
+                        <Label Text="Air Conditioner" FontAttributes="Bold"/>
+                        <Label Text="ON" TextColor="Green"/>
+                        <Switch/>
+                    </VerticalStackLayout>
+                </Frame>
+
+                <!-- Security -->
+                <Frame Grid.Row="1" Grid.Column="1" Style="{StaticResource CardFrame}">
+                    <VerticalStackLayout Spacing="8">
+                        <Image Source="security.png" HeightRequest="40"/>
+                        <Label Text="Security" FontAttributes="Bold"/>
+                        <Label Text="ACTIVE" TextColor="Green"/>
+                        <Switch/>
+                    </VerticalStackLayout>
+                </Frame>
+            </Grid>
+
+            <!-- ENERGY USAGE -->
+            <Frame Style="{StaticResource CardFrame}">
+                <VerticalStackLayout Spacing="8">
+                    <Label Text="Today's Energy Usage" FontAttributes="Bold"/>
+                    <ProgressBar Progress="0.65"/>
+                    <Label Text="65%" HorizontalOptions="End"/>
+                </VerticalStackLayout>
+            </Frame>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
